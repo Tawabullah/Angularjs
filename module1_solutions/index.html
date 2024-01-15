@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <style>
+        .message {
+          color: red;
+        }
+      </style>
+</head>
+
+<body>
+    <div ng-controller="MyController">
+        <h1>Lunch Checker</h1>
+        <p>
+            <input type="text" placeholder="Enter comma-separated items" ng-model="lunchItems">
+        </p>
+        <p>
+            <button ng-click="checkLunch()">Check If Too Much</button>
+        </p>
+        <p class="message" ng-show="message">{{ message }}</p>
+
+    </div>
+
+
+</body>
+
+</html>
