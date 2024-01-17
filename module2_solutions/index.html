@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <title>Shopping List</title>
+  <style>
+    .list {
+      margin-bottom: 20px;
+    }
+
+    .list-item {
+      margin-bottom: 5px;
+    }
+
+    .message {
+      font-style: italic;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+    <div ng-app="ShoppingListApp">
+      <div ng-controller="ToBuyController">
+        <h2>To Buy</h2>
+        <div class="list">
+          <div ng-repeat="item in toBuyList" class="list-item">
+            Buy {{ item.quantity }} {{ item.name }}
+            <button ng-click="buyItem($index)">Bought</button>
+          </div>
+        </div>
+      </div>
+  
+      <div ng-controller="AlreadyBoughtController">
+        <h2>Already Bought</h2>
+        <div class="list">
+          <div ng-if="alreadyBoughtList.length === 0" class="message">Nothing bought yet</div>
+          <div ng-repeat="item in alreadyBoughtList" class="list-item">
+            Bought {{ item.quantity }} {{ item.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+
+</html>
