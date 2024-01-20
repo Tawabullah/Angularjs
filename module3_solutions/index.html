@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MenuApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <script src="menu_items.json"></script>
+    <title>Shopping List</title>
+  <style>
+ 
+  </style>
+</head>
+
+<body ng-controller="NarrowItDownController as narrowCtrl">
+  <div>
+    <input type="text" ng-model="narrowCtrl.searchTerm" placeholder="Enter search term">
+    <button ng-click="narrowCtrl.narrowItDown()">Narrow It Down For Me!</button>
+  </div>
+  <div ng-show="narrowCtrl.showResults">
+    <ul>
+      <li ng-repeat="item in narrowCtrl.foundItems">
+        {{ item.name }}, {{ item.short_name }}, {{ item.description }}
+        <button ng-click="narrowCtrl.removeItem($index)">Don't want this one!</button>
+      </li>
+    </ul>
+    <p ng-show="narrowCtrl.foundItems.length === 0">Nothing found</p>
+  </div>
+</body>
+</html>

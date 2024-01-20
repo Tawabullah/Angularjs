@@ -1,0 +1,20 @@
+{
+    "menu_items": [
+      {
+        "name": "Item 1",
+        "short_name": "I1",
+        "description": "Description 1"
+      },
+      {
+        "name": "Item 2",
+        "short_name": "I2",
+        "description": "Description 2"
+      },
+      {
+        "name": "Item 3",
+        "short_name": "I3",
+        "description": "Description 3"
+      },
+     
+    ]
+  }
